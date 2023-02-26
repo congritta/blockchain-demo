@@ -1,0 +1,53 @@
+{
+  "name": "blockchain-demo",
+  "version": "1.0.0",
+  "main": "builder.js",
+  "author": "Alex Congritta",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node builder.ts --watch",
+    "build": "ts-node builder.ts"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.2",
+    "@types/crypto-js": "^4.1.1",
+    "@types/luxon": "^3.2.0",
+    "@types/react-transition-group": "^4.4.5",
+    "animate.css": "^4.1.1",
+    "axios": "^1.3.1",
+    "classnames": "^2.3.2",
+    "consola": "^2.15.3",
+    "crypto-js": "^4.1.1",
+    "luxon": "^3.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-range": "^1.8.14",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.8.0",
+    "react-textarea-autosize": "^8.4.0",
+    "react-transition-group": "^4.4.5",
+    "redux": "^4.2.1",
+    "redux-localstorage-simple": "^2.5.1",
+    "shade-generator": "^1.2.7"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/live-server": "^1.2.1",
+    "@types/node": "^18.11.9",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.8",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
+    "autoprefixer": "^10.4.13",
+    "chokidar": "^3.5.3",
+    "esbuild": "^0.15.13",
+    "esbuild-css-modules-plugin": "^2.6.2",
+    "fs-extra": "^10.1.0",
+    "live-server": "^1.2.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  },
+  "overrides": {
+    "chokidar": "^3.5.3"
+  }
+}

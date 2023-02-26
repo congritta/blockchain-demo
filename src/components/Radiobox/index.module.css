@@ -1,0 +1,41 @@
+/*
+ * Copyright (c) 2023. Alex Congritta
+ *
+ * E-Mail: congritta@gmail.com
+ * WebSite: https://congritta.com
+ */
+
+.radiobox {
+  display: flex;
+  gap: var(--inputs-horizontal-padding);
+  cursor: pointer;
+  align-items: flex-start;
+}
+
+.radiobox > * {
+  flex-shrink: 0
+}
+
+.radiobox-icon {
+  transition: .21s
+}
+
+.radiobox:active > .radiobox-icon {
+  transform: scale(.9)
+}
+
+.radiobox-icon > svg {
+  width: var(--inputs-icon-size)
+}
+
+@media (prefers-color-scheme: dark) {
+  .radiobox-icon > svg {
+    fill: #fff
+  }
+}
+
+.radiobox-contents {
+  display: flex;
+  align-items: center;
+  min-height: var(--inputs-icon-size)
+}

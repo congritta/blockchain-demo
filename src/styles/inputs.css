@@ -1,0 +1,186 @@
+/*
+ * Copyright (c) 2023. Alex Congritta
+ *
+ * E-Mail: congritta@gmail.com
+ * WebSite: https://congritta.com
+ */
+
+:root {
+  --inputs-horizontal-padding: 10px;
+  --inputs-icon-size: 24px;
+  --input-base-height: 45px
+}
+
+input, button, textarea {
+  display: block;
+  width: 100%;
+  font: inherit;
+  border-radius: 8px;
+  border: 2px solid var(--accent-color-100);
+  padding: 0 var(--inputs-horizontal-padding);
+  height: var(--input-base-height);
+  transition: all .21s, padding 0s, border 0s;
+}
+
+/* Zeroed inputs */
+
+input.isZeroed, button.isZeroed, textarea.isZeroed {
+  width: auto;
+  height: auto;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* Text inputs */
+input[type="text"],
+input[type="password"],
+textarea {
+  background: transparent;
+  box-shadow: none;
+}
+
+textarea {
+  height: auto;
+  resize: none;
+  transition: height 0s;
+  padding: var(--inputs-horizontal-padding)
+}
+
+@media (prefers-color-scheme: dark) {
+  input[type="text"],
+  input[type="password"],
+  textarea {
+    color: #fff;
+  }
+}
+
+input[type="text"]:not(:read-only):not(:disabled):focus,
+input[type="password"]:not(:read-only):not(:disabled):focus,
+textarea:not(:read-only):not(:disabled):focus {
+  box-shadow: 0 0 10px var(--accent-color-50)
+}
+
+@media (prefers-color-scheme: dark) {
+  input[type="text"]:not(:read-only):not(:disabled):focus,
+  input[type="password"]:not(:read-only):not(:disabled):focus,
+  textarea:not(:read-only):not(:disabled):focus {
+    box-shadow: 0 0 10px var(--accent-color-300)
+  }
+}
+
+input[type="text"]:read-only,
+input[type="password"]:read-only,
+textarea:read-only {
+  border-color: var(--black-color-300);
+  cursor: default;
+}
+
+/* Buttons */
+
+button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--inputs-horizontal-padding);
+  padding: 0 var(--inputs-horizontal-padding);
+  background: var(--accent-color-100);
+  color: #fff;
+  font-weight: bold;
+}
+
+button,
+button > span {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+button:not(:disabled):not(.isZeroed):hover {
+  background: var(--accent-color-90);
+  border-color: var(--accent-color-90);
+}
+
+@media (prefers-color-scheme: dark) {
+  button:not(:disabled):not(.isZeroed):hover {
+    background: var(--accent-color-200);
+    border-color: var(--accent-color-200);
+  }
+}
+
+button:disabled {
+  cursor: default;
+  background: var(--black-color-50);
+  border-color: var(--black-color-50);
+}
+
+@media (prefers-color-scheme: dark) {
+  button:disabled {
+    background: var(--black-color-300);
+    border-color: var(--black-color-300);
+  }
+}
+
+button.isZeroed {
+  color: #000
+}
+
+@media (prefers-color-scheme: dark) {
+  button.isZeroed {
+    color: #fff
+  }
+}
+
+button.isAutowidth {
+  width: auto;
+}
+
+button > svg {
+  flex-shrink: 0;
+  width: var(--inputs-icon-size);
+  fill: #fff
+}
+
+button.isZeroed > svg {
+  fill: #000
+}
+
+@media (prefers-color-scheme: dark) {
+  button.isZeroed > svg {
+    fill: #fff
+  }
+}
+
+/* Label */
+.label {
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  margin-bottom: -5px;
+}
+
+/* Field wrapper */
+.field-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--inputs-horizontal-padding)
+}
+
+.field-wrapper:not(:first-child) {
+  margin-top: 20px
+}
+
+.field-wrapper > .field-wrapper {
+  width: 100%;
+  flex: 1;
+  margin-top: 0;
+  min-width: 180px;
+}
+
+.field-wrapper > input:not(.isZeroed):not(.isAutowidth),
+.field-wrapper > button:not(.isZeroed):not(.isAutowidth),
+.field-wrapper > textarea:not(.isZeroed):not(.isAutowidth) {
+  flex: 1
+}

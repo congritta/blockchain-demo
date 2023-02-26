@@ -1,0 +1,73 @@
+/*
+ * Copyright (c) 2023. Alex Congritta
+ *
+ * E-Mail: congritta@gmail.com
+ * WebSite: https://congritta.com
+ */
+
+.notifications-list {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  max-width: 350px;
+  max-height: 100%;
+  overflow: auto;
+  padding: 20px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  pointer-events: none;
+  z-index: 2000;
+}
+
+.notifications-list::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 580px) {
+  .notifications-list {
+    max-width: unset;
+    top: 0;
+    bottom: unset;
+  }
+}
+
+.notification {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 7px 29px 0;
+  padding: 15px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, .6);
+  color: #fff;
+  animation-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  pointer-events: auto;
+}
+
+.notification[class*="animated"] {
+  opacity: 0;
+}
+
+.notification:not(:last-child) {
+  margin-bottom: 15px
+}
+
+.notification-icon {
+  flex-shrink: 0;
+  width: 50px;
+}
+
+.notification-icon > svg {
+  width: 100%;
+  fill: #fff
+}
+
+.notification-data > .title {
+  font-weight: bold
+}
+
+.notification-data > .contents {
+  font-size: 11pt;
+  white-space: pre-wrap;
+}

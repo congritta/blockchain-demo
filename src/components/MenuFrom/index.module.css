@@ -1,0 +1,75 @@
+/*
+ * Copyright (c) 2023. Alex Congritta
+ *
+ * E-Mail: congritta@gmail.com
+ * WebSite: https://congritta.com
+ */
+
+.menu-from {
+  position: relative
+}
+
+.menu-from > .menu-list {
+  position: fixed;
+  z-index: 1;
+  width: var(--menu-width);
+  max-height: var(--max-menu-height);
+  border-radius: 8px;
+  overflow: auto;
+  background: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all .32s cubic-bezier(0.68, -0.6, 0.32, 1.6), top 0s, left 0s;
+}
+
+@media (prefers-color-scheme: dark) {
+  .menu-from > .menu-list {
+    background: var(--black-color-900);
+    box-shadow: var(--black-color-1000) 0 7px 29px 0;
+  }
+}
+
+.menu-from > .menu-list.isActive {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.menu-from > .menu-list > .menu-list-item {
+  display: flex;
+  align-items: center;
+  height: var(--item-height);
+  padding: 0 10px;
+  font-size: 11pt;
+  cursor: pointer;
+  transition: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.menu-from > .menu-list > .menu-list-item:not(:last-child) {
+  border-bottom: 1px solid var(--black-color-30)
+}
+
+@media (prefers-color-scheme: dark) {
+  .menu-from > .menu-list > .menu-list-item:not(:last-child) {
+    border-bottom-color: var(--black-color-800);
+  }
+}
+
+.menu-from > .menu-list > .menu-list-item:hover {
+  background: var(--black-color-10);
+}
+
+@media (prefers-color-scheme: dark) {
+  .menu-from > .menu-list > .menu-list-item:hover {
+    background: var(--black-color-800);
+  }
+}
+
+.menu-from > .menu-list > .menu-list-item > button {
+  font-weight: normal;
+}
